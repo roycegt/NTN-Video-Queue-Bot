@@ -1,0 +1,21 @@
+name: Daily Video Cards
+
+on:
+  schedule:
+    # Runs at 11:00 UTC daily = 6:00 AM Colombia time (UTC-5, no DST).
+    # Adjust the hour if you want a different local time.
+    - cron: '0 11 * * *'
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab too
+
+jobs:
+  create-cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: pip install requests
+      - run: python daily_video_cards.py
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
