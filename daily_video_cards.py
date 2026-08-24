@@ -30,10 +30,10 @@ def create_card(token: str, data_source_id: str, video_number: int, date_str: st
     payload = {
         "parent": {"type": "data_source_id", "data_source_id": data_source_id},
         "properties": {
-            "Video": {"title": [{"text": {"content": f"Video {video_number}"}}]},
+            "Post": {"title": [{"text": {"content": f"Reference post {video_number}"}}]},
             "Status": {"select": {"name": "Pending"}},
-            "Video #": {"number": video_number},
-            "Date": {"date": {"start": date_str}},
+            "Slot": {"number": video_number},
+            "Shoot date": {"date": {"start": date_str}},
         },
     }
     headers = {
@@ -55,7 +55,7 @@ def main() -> None:
 
     for n in range(1, NUM_VIDEOS + 1):
         create_card(token, data_source_id, n, today)
-        print(f"Created Video {n} for {today}")
+        print(f"Created Reference post {n} for {today}")
 
     print(f"Done — {NUM_VIDEOS} cards created for {today}.")
 
