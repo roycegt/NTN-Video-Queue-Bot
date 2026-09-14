@@ -6,7 +6,7 @@ every day, automatically.
 ## 1. Get a Notion integration token (one-time, you do this — not me)
 
 1. Go to https://www.notion.so/my-integrations → **New integration**
-2. Name it anything (e.g. "Video Queue Bot") → workspace: roycegoldman's Space
+2. Name it anything (e.g. "Video Queue Bot") → workspace: user's Space
 3. Copy the **Internal Integration Secret** it gives you. Treat it like a
    password — never paste it into a chat with me or commit it to a public repo.
 
@@ -25,7 +25,7 @@ every day, automatically.
    - Name: `NOTION_TOKEN`
    - Value: (paste the secret from step 1 — only you ever see this)
 3. That's it. The workflow in `.github/workflows/daily-video-cards.yml`
-   runs every day at 11:00 UTC (6:00 AM Colombia time). Change the
+   runs every day at 11:00 UTC (6:00 AM GMT-5 time). Change the
    `cron` line if you want a different time.
 4. You can test it immediately: repo → **Actions** tab → "Daily Video
    Cards" → **Run workflow**
