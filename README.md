@@ -9,6 +9,7 @@ every day, automatically.
 2. Name it anything (e.g. "Video Queue Bot") → workspace: user's Space
 3. Copy the **Internal Integration Secret** it gives you. Treat it like a
    password — never paste it into a chat with me or commit it to a public repo.
+   4. Store all private information securely.
 
 ## 2. Give the integration access to the database
 
